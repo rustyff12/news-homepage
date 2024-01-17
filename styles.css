@@ -28,29 +28,39 @@ body {
 }
 
 /* Header */
+.header {
+    margin: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: none;
+}
+
 .header-logo {
-    max-width: 2rem;
+    width: 4rem;
 }
 
 
-/* .hamburger {
-    position: fixed;
+.hamburger {
+    position: absolute;
     z-index: 100;
-    top: 1rem;
+    top: 1.5rem;
     right: 1rem;
     padding: 4px;
-    border: black solid 1px;
+    border: none;
     background: white;
     cursor: pointer;
 }
 
-.closeIcon {
+.closed {
     display: none;
 }
 
-.menu {
+.menu-open {
     position: fixed;
-    transform: translateX(-100%);
+    /* transform: translateX(-100%); */
     transition: transform 0.2s;
     top: 0;
     left: 0;
@@ -63,7 +73,7 @@ body {
     padding-top: 4rem;
 }
 
-.showMenu {
+/* .showMenu {
     transform: translateX(0);
 } */
 
@@ -78,11 +88,14 @@ body {
     gap: 2rem;
 }
 /* First */
-.container__box-first,
-.container__box-second {
-    /* border: 1px solid red; */
+.container__box-first {
     display: grid;
     gap: 0.8rem;
+}
+
+.container__box-first-content {
+    display: grid;
+    gap: 1rem;
 }
 
 #main-image img {
@@ -101,6 +114,7 @@ body {
 .container__box-first p {
     line-height: 150%;
     color: var(--clr-dark-gray);
+    margin-bottom: 1rem;
 }
 
 .btn {
@@ -125,7 +139,8 @@ body {
     background: var(--clr-dark-blue);
     color: var(--clr-off-whie);
     padding: 1rem;
-
+    display: grid;
+    gap: 0.8rem;
 }
 
 .container__box-second-item {
@@ -201,8 +216,7 @@ body {
 @media screen and (min-width: 1000px) {
     /* Header */
     .header {
-        padding: 2rem 8rem
-        0rem 8rem;
+        padding: 2rem 8rem 0rem 8rem;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -213,6 +227,10 @@ body {
     .header-logo {
         max-width: 8rem;
         margin-left: 1rem;
+    }
+
+    .hamburger {
+        display: none;
     }
 
     .menu {
@@ -276,6 +294,11 @@ body {
         flex-direction: column;
         gap: 1.5rem;
     }
+
+    .container__box-first p {
+        margin-bottom: 0rem;
+    }
+
     /* Second */
     .container__box-second {
         grid-area: 1 / 3 / 4 / 4;
